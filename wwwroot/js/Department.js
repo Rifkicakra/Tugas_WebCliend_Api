@@ -39,39 +39,6 @@
     ],
 });
 
-function newDepartments() {
-    let data;
-    let Id = 0;
-    let Name = $('#DepartmentName').val();
-    let DivisionID = parseInt($('#DivisionID').val());
-
-    data = {
-        "Id": Id,
-        "Name": Name,
-        "DivisionID": DivisionID
-    }
-
-    console.log(data);
-
-    $.ajax({
-        url: 'https://localhost:7159/api/Department/',
-        type: "POST",
-        data: JSON.stringify(data),
-        dataType: 'json',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        success: function (data) {
-            Swal.fire(
-                'Data Ditambahkan',
-                'You clicked the button!',
-                'success'
-            )
-            location.reload();
-        }
-    });
-}
-
 function detailsDepartment(Id) {
     $.ajax({
         url: `https://localhost:7159/api/Department/Id?Id=${Id}`,
@@ -133,7 +100,7 @@ function updateDepartments() {
         success: function (data) {
             Swal.fire(
                 'Data Diupdate',
-                'You clicked the button!',
+                'sedang proses!!',
                 'success'
             )
             location.reload();
@@ -147,9 +114,41 @@ function deleteDepartment(Id) {
         method: "DELETE",
         dataType: 'json',
         success: function (message) {
-            alert("Data Deleted" + message);
+            alert("DATA DIHAPUS YA" + message"!!");
             location.reload();
         }
     })
 }
 
+function newDepartments() {
+    let data;
+    let Id = 0;
+    let Name = $('#DepartmentName').val();
+    let DivisionID = parseInt($('#DivisionID').val());
+
+    data = {
+        "Id": Id,
+        "Name": Name,
+        "DivisionID": DivisionID
+    }
+
+    console.log(data);
+
+    $.ajax({
+        url: 'https://localhost:7159/api/Department/',
+        type: "POST",
+        data: JSON.stringify(data),
+        dataType: 'json',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        success: function (data) {
+            Swal.fire(
+                'DATA DITAMBAHKAN',
+                '+_+_+_+_',
+                'success'
+            )
+            location.reload();
+        }
+    });
+}

@@ -66,7 +66,7 @@ function newDivisions() {
         success: function (data) {
             Swal.fire(
                 'Data Ditambahkan',
-                'You clicked the button!',
+                'di proses!',
                 'success'
             )
             location.reload();
@@ -130,8 +130,7 @@ function updateDivisions() {
         },
         success: function (data) {
             Swal.fire(
-                'Data Diupdate',
-                'You clicked the button!',
+                'Data Ditambahkan',
                 'success'
             )
             location.reload();
@@ -145,7 +144,7 @@ function deleteDivision(Id) {
         method: "DELETE",
         dataType: 'json',
         success: function (message) {
-            alert("Data Deleted" + message);
+            alert("Data Sudah Dihapus" + message);
             location.reload();
         }
     })
